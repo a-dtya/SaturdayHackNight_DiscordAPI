@@ -19,9 +19,8 @@ async def add(ctx, *arr):
     for i in arr:
         result += int(i)
     await ctx.send(f"Result: {result}")
-<<<<<<< HEAD
-bot.run(BOT_TOKEN)   
-#dominic added a comment 
-=======
+
+
+
 bot.run(secret.BOT_TOKEN)    
->>>>>>> 18e4fc9f73760aea32d3ccbac7440f33154b7083
+
