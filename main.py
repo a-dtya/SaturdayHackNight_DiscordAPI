@@ -1,19 +1,18 @@
 import discord
-#import secret
+import secret
 import urllib
 import requests
 import json
 from discord.ext import commands
 from dataclasses import dataclass
-CHANNEL = 2374672
-BOT_TOKEN = 237455
+
 #SATURDAY HACKNIGHT
 bot = commands.Bot(command_prefix="!",intents=discord.Intents.all(),help_command=None)
 
 @bot.event
 async def on_ready():
     print("Hello! I'm the Frenzy Bot")
-    channel = bot.get_channel(CHANNEL)
+    channel = bot.get_channel(secret.CHANNEL)
     await channel.send("Hello! Welcome to the Channel")
 @bot.command()
 async def hello(ctx):
@@ -141,7 +140,7 @@ async def  areaundercurve(ctx,a):
  
     
 
-bot.run(BOT_TOKEN)
+bot.run(secret.BOT_TOKEN)
     
      
 
