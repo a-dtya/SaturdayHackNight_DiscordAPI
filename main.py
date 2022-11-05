@@ -2,6 +2,7 @@ import discord
 import secret
 import urllib
 import requests
+import json
 from discord.ext import commands
 from dataclasses import dataclass
 
