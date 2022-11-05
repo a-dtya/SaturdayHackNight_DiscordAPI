@@ -29,7 +29,7 @@ async def help(ctx):
         color = discord.Color.red()
 
     )
-    embed.add_field(name='Commands',value='`simplify`,`inversecosine`,`inversesine`,`inversetan`,`absolute`,`log`,`factor`',inline=False)
+    embed.add_field(name='Commands',value='`simplify`,`inversecosine`,`inversesine`,`inversetan`,`absolute`,`log`,`factor`,`integrate`,`derive`,`zeroes`,`cos`,`sin`,`tan`,`areaundercurve`',inline=False)
     await ctx.send(embed=embed)
 
 @bot.command()
@@ -70,13 +70,73 @@ async def log(ctx,a):
     response = requests.get(url)
     get_json = json.loads(response.text)
     await ctx.send(f"Result:{get_json['result']}")      
+ 
+@bot.command()
+async def derive(ctx,a):
+    val = urllib.parse.quote_plus(a)
+    url = "https://newton.now.sh/api/v2/derive/"+val
+    response = requests.get(url)
+    get_json = json.loads(response.text)
+    await ctx.send(f"Result:{get_json['result']}")
+
+
 @bot.command()
 async def factor(ctx,a):
     val = urllib.parse.quote_plus(a)
     url = "https://newton.now.sh/api/v2/factor/"+val
     response = requests.get(url)
     get_json = json.loads(response.text)
-    await ctx.send(f"Result:{get_json['result']}")  
+    await ctx.send(f"Result:{get_json['result']}")
+ 
+@bot.command()
+async def integrate(ctx,a):
+    val = urllib.parse.quote_plus(a)
+    url = "https://newton.now.sh/api/v2/integrate/"+val
+    response = requests.get(url)
+    get_json = json.loads(response.text)
+    await ctx.send(f"Result:{get_json['result']}")
+@bot.command()
+async def zeroes(ctx,a):
+    val = urllib.parse.quote_plus(a)
+    url = "https://newton.now.sh/api/v2/zeroes/"+val
+    response = requests.get(url)
+    get_json = json.loads(response.text)
+    await ctx.send(f"Result:{get_json['result']}")    
+@bot.command()
+async def cos(ctx,a):
+    val = urllib.parse.quote_plus(a)
+    url = "https://newton.now.sh/api/v2/cos/"+val
+    response = requests.get(url)
+    get_json = json.loads(response.text)
+    await ctx.send(f"Result:{get_json['result']}")
+
+
+
+@bot.command()
+async def sin(ctx,a):
+    val = urllib.parse.quote_plus(a)
+    url = "https://newton.now.sh/api/v2/sin/"+val
+    response = requests.get(url)
+    get_json = json.loads(response.text)
+    await ctx.send(f"Result:{get_json['result']}")
+
+
+@bot.command()
+async def tan(ctx,a):
+    val = urllib.parse.quote_plus(a)
+    url = "https://newton.now.sh/api/v2/tan/"+val
+    response = requests.get(url)
+    get_json = json.loads(response.text)
+    await ctx.send(f"Result:{get_json['result']}")    
+@bot.command()
+async def  areaundercurve(ctx,a):
+    val = urllib.parse.quote_plus(a)
+    url = "https://newton.now.sh/api/v2/area/"+val
+    response = requests.get(url)
+    get_json = json.loads(response.text)
+    await ctx.send(f"Result:{get_json['result']}")    
+ 
+    
 
 bot.run(secret.BOT_TOKEN)
     
