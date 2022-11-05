@@ -2,6 +2,7 @@
 This repo consists of the project built during the Saturday hack night event of Tinkerhub
 Built a discord bot for computing calculations of advanced mathematics.
 This bot can perfrom various mathematical functions and implementation in discord as follows:
+
 !simplify expression => simplify expression
 !factor expression => factors nth degree polynomial
 !derive expression => calculates derivative of a function
