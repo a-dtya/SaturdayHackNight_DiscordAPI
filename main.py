@@ -1,5 +1,7 @@
 import discord
 import secret
+import urllib
+import requests
 from discord.ext import commands
 from dataclasses import dataclass
 
